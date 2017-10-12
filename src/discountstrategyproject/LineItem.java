@@ -10,37 +10,25 @@ package discountstrategyproject;
  * @author mattkirchner
  */
 public class LineItem {
-    private LineItem[] lineItems = new LineItem[0];
-    private ReceiptDataAccessStrategy da;
     private Product prod;
-    private LineItem lineItem;
+    private int qty;
 
     public LineItem(String prodID, int qty, ReceiptDataAccessStrategy da) {
-        this.setDa(da);
-    }
-    
-    private final void addToArray(final LineItem item) {
-        // needs validation
-        LineItem[] tempItems = new LineItem[lineItems.length + 1];
-        System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
-        tempItems[lineItems.length] = item;
-        lineItems = tempItems;
-    }
-    
-    public final void addProductToLineItem(String prodID){
         prod = da.findProduct(prodID);
-        
-        this.addToArray(lineItem);
+        this.qty = qty;
     }
     
-    public final void setDa(ReceiptDataAccessStrategy da){
-        if(da == null){
-            throw new IllegalArgumentException("Must not be null");
-        }
-        this.da = da;
+    public final double getSubtotal() {
+        return prod.getUnitPrice() * qty;
     }
     
-    public final ReceiptDataAccessStrategy getDa(){
-        return da;
+    public final double getDiscountAmt() {
+        return prod.getDiscount().getDiscount(prod.getUnitPrice(), qty);
     }
+    
+    public final String getProdId() {
+        return prod.getProdID();
+    }
+    
+    
 }

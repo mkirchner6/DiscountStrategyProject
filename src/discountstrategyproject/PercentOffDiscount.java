@@ -10,12 +10,15 @@ package discountstrategyproject;
  * @author mattkirchner
  */
 public class PercentOffDiscount implements Discount{
+    private double discountPercent;
+    
     public PercentOffDiscount(double discountPercent) {
+        this.discountPercent = discountPercent;
     }
     
     @Override
-    public final double getDiscount() {
-        return 0;
+    public final double getDiscount(double unitCost, int qty) {
+        return unitCost * qty * discountPercent;
     }
     
 }
