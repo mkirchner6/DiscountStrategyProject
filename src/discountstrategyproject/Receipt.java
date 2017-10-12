@@ -5,6 +5,7 @@
  */
 package discountstrategyproject;
 
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -45,9 +46,16 @@ public class Receipt {
     }
 
     public final void displayReceipt(ReceiptFormatter rc) {
+        this.receiptStoreInfo();
         for(LineItem item: lineItems){
             rc.displayReceipt(item);
         }
+    }
+    
+    private final void receiptStoreInfo() {
+        System.out.println("Thank you for shopping at Kohl's");
+        System.out.println(new Date());
+        System.out.println("");
     }
 
 }
