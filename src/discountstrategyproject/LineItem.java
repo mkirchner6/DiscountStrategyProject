@@ -11,8 +11,10 @@ package discountstrategyproject;
  */
 public class LineItem {
     private LineItem[] lineItems = new LineItem[0];
+    private ReceiptDataAccessStrategy da;
 
     public LineItem(String prodID, int qty, ReceiptDataAccessStrategy da) {
+        this.setDa(da);
     }
     
     private final void addToArray(final LineItem item) {
@@ -21,5 +23,20 @@ public class LineItem {
         System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
         tempItems[lineItems.length] = item;
         lineItems = tempItems;
+    }
+    
+    public final void addProductToLineItem(String prodID){
+        
+    }
+    
+    public final void setDa(ReceiptDataAccessStrategy da){
+        if(da == null){
+            throw new IllegalArgumentException("Must not be null");
+        }
+        this.da = da;
+    }
+    
+    public final ReceiptDataAccessStrategy getDa(){
+        return da;
     }
 }

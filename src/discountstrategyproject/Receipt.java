@@ -17,9 +17,8 @@ public class Receipt {
         
     }
     
-    public final Receipt getReceipt(String prodID, int qty, ReceiptDataAccessStrategy da){
+    public final void addItemToReceipt(String prodID, int qty, ReceiptDataAccessStrategy da){
         lineItem = new LineItem(prodID, qty, da);
-        return null;
     }
     
     public final void displayReceipt(){

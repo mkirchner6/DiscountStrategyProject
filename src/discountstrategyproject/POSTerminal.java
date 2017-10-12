@@ -17,7 +17,7 @@ public class POSTerminal {
     }
     
     public final void addItemToSale(String prodID, String name, int qty, ReceiptDataAccessStrategy da){
-        receipt.getReceipt(prodID, qty, da);
+        receipt.addItemToReceipt(prodID, qty, da);
     }
     
     public final void endSale(){
