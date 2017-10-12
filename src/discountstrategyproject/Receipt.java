@@ -20,7 +20,6 @@ public class Receipt {
     }
     
     public Receipt(ReceiptDataAccessStrategy da) {
-        
     }
 
     public final void addItemToReceipt(String prodID, int qty, ReceiptDataAccessStrategy da) {
@@ -38,9 +37,11 @@ public class Receipt {
     }
     
     public final void displayToVideoTerminal() {
+        String data = "";
         for(LineItem item: lineItems){
-            JOptionPane.showMessageDialog(null, item);
-        }
+            data += item.getProdName() + "   " + item.getUnitPrice() + "   " + item.getQty() + "   " + item.getSubtotal() + "   " + item.getDiscountAmt() + "\n";
+        }  
+        JOptionPane.showMessageDialog(null, data);
     }
 
     public final void displayReceipt(ReceiptFormatter rc) {

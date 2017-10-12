@@ -17,16 +17,16 @@ public class Product {
     
     public Product(String prodID, String name, double unitPrice, Discount discount) {
         this.setProdID(prodID);
-        this.setName(name);
+        this.setProdName(name);
         this.setUnitPrice(unitPrice);
         this.setDiscount(discount);
     }
 
-    public final String getName() {
+    public final String getProdName() {
         return name;
     }
 
-    public final void setName(String name) {
+    public final void setProdName(String name) {
         if(name == null){
             throw new IllegalArgumentException("This feild is required");
         }

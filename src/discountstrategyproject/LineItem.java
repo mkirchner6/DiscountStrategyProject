@@ -31,7 +31,7 @@ public class LineItem {
     }
     
     public final String getProdName() {
-        return prod.getName();
+        return prod.getProdName();
     }
     
     public final int getQty(){
