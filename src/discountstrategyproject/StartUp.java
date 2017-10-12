@@ -20,7 +20,7 @@ public class StartUp {
         ReceiptDataAccessStrategy da = new InMemoryDataAccess();
         
         //sale #1
-        pos.startNewSale("200");
+        pos.startNewSale("200", da);
         pos.addItemToSale("A101", "MLB Brewer's Hat", 3, da);
         pos.addItemToSale("C222", "Women's Socks", 5, da);
         pos.endSale();

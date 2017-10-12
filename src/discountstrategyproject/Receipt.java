@@ -10,11 +10,11 @@ package discountstrategyproject;
  * @author mattkirchner
  */
 public class Receipt {
-    private Product prod;
     private LineItem lineItem;
+    private Customer cust;
 
-    public Receipt(String custID) {
-        
+    public Receipt(String custID, ReceiptDataAccessStrategy da) {
+        cust = da.findCustomer(custID);
     }
     
     public final void addItemToReceipt(String prodID, int qty, ReceiptDataAccessStrategy da){

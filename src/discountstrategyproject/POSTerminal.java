@@ -12,8 +12,8 @@ package discountstrategyproject;
 public class POSTerminal {
     private Receipt receipt;
     
-    public final void startNewSale(String custID){
-        Receipt receipt = new Receipt(custID);
+    public final void startNewSale(String custID, ReceiptDataAccessStrategy da){
+        Receipt receipt = new Receipt(custID, da);
     }
     
     public final void addItemToSale(String prodID, String name, int qty, ReceiptDataAccessStrategy da){

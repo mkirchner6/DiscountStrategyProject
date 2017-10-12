@@ -12,6 +12,8 @@ package discountstrategyproject;
 public class LineItem {
     private LineItem[] lineItems = new LineItem[0];
     private ReceiptDataAccessStrategy da;
+    private Product prod;
+    private LineItem lineItem;
 
     public LineItem(String prodID, int qty, ReceiptDataAccessStrategy da) {
         this.setDa(da);
@@ -26,7 +28,9 @@ public class LineItem {
     }
     
     public final void addProductToLineItem(String prodID){
+        prod = da.findProduct(prodID);
         
+        this.addToArray(lineItem);
     }
     
     public final void setDa(ReceiptDataAccessStrategy da){
