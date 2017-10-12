@@ -22,10 +22,10 @@ public class Receipt {
     public Receipt(ReceiptDataAccessStrategy da) {
     }
 
-    public final void addItemToReceipt(String prodID, int qty, ReceiptDataAccessStrategy da) {
+    public final void addItemToReceipt(String prodID, int qty, ReceiptDataAccessStrategy da, FormatDisplayTerminal fdt) {
         LineItem lineItem = new LineItem(prodID, qty, da);
         addToArray(lineItem);
-        displayToVideoTerminal();
+        displayToVideoTerminal(fdt);
     }
 
     private final void addToArray(final LineItem item) {
@@ -36,7 +36,7 @@ public class Receipt {
         lineItems = tempItems;
     }
     
-    public final void displayToVideoTerminal() {
+    private final void displayToVideoTerminal(FormatDisplayTerminal fdt) {
         String data = "";
         for(LineItem item: lineItems){
             data += item.getProdName() + "   " + item.getUnitPrice() + "   " + item.getQty() + "   " + item.getSubtotal() + "   " + item.getDiscountAmt() + "\n";

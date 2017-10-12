@@ -16,8 +16,8 @@ public class POSTerminal {
         receipt = new Receipt(custID, da);
     }
     
-    public final void addItemToSale(String prodID, int qty, ReceiptDataAccessStrategy da){
-        receipt.addItemToReceipt(prodID, qty, da);
+    public final void addItemToSale(String prodID, int qty, ReceiptDataAccessStrategy da, FormatDisplayTerminal fdt){
+        receipt.addItemToReceipt(prodID, qty, da, fdt);
     }
     
     public final void endSale(ReceiptFormatter rc){

@@ -17,28 +17,30 @@ public class StartUp {
         ReceiptDataAccessStrategy da = new InMemoryDataAccess();
         //format receipt
         ReceiptFormatter rc = new ReceiptFormatToConsol();
+        //format video display terminal
+        FormatDisplayTerminal fdt = new FormatDisplayTerminalToGUI();
         
         //sale #1
         System.out.println("Customer #1");
         pos.startNewSale("200", da);
-        pos.addItemToSale("A101", 3, da);
-        pos.addItemToSale("C222", 5, da);
+        pos.addItemToSale("A101", 3, da, fdt);
+        pos.addItemToSale("C222", 5, da, fdt);
         pos.endSale(rc);
         System.out.println("");
         
         //sale #2
         System.out.println("Customer #2");
         pos.startNewSale("100", da);
-        pos.addItemToSale("B205", 1, da);
-        pos.addItemToSale("A101", 7, da);
+        pos.addItemToSale("B205", 1, da, fdt);
+        pos.addItemToSale("A101", 7, da, fdt);
         pos.endSale(rc);
         System.out.println("");
         
         //sale #3
         System.out.println("Customer #3");
         pos.startNewSale("200", da);
-        pos.addItemToSale("B205", 2, da);
-        pos.addItemToSale("C222", 1, da);
+        pos.addItemToSale("B205", 2, da, fdt);
+        pos.addItemToSale("C222", 1, da, fdt);
         pos.endSale(rc);
         System.out.println("");
     }
