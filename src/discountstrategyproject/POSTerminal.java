@@ -13,14 +13,14 @@ public class POSTerminal {
     private Receipt receipt;
     
     public final void startNewSale(String custID, ReceiptDataAccessStrategy da){
-        Receipt receipt = new Receipt(custID, da);
+        receipt = new Receipt(custID, da);
     }
     
-    public final void addItemToSale(String prodID, String name, int qty, ReceiptDataAccessStrategy da){
+    public final void addItemToSale(String prodID, int qty, ReceiptDataAccessStrategy da){
         receipt.addItemToReceipt(prodID, qty, da);
     }
     
-    public final void endSale(){
-        receipt.displayReceipt();
+    public final void endSale(ReceiptFormatter rc){
+        receipt.displayReceipt(rc);
     }
 }

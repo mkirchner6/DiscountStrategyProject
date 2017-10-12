@@ -30,5 +30,15 @@ public class LineItem {
         return prod.getProdID();
     }
     
+    public final String getProdName() {
+        return prod.getName();
+    }
     
+    public final int getQty(){
+        return qty;
+    }
+    
+    public final double getUnitPrice() {
+        return prod.getUnitPrice();
+    }
 }

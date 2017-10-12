@@ -17,13 +17,28 @@ public class StartUp {
     public static void main(String[] args) {
         //configuration
         POSTerminal pos = new POSTerminal();
+        //data access
         ReceiptDataAccessStrategy da = new InMemoryDataAccess();
+        //format receipt
+        ReceiptFormatter rc = new ReceiptFormatToConsol();
         
         //sale #1
         pos.startNewSale("200", da);
-        pos.addItemToSale("A101", "MLB Brewer's Hat", 3, da);
-        pos.addItemToSale("C222", "Women's Socks", 5, da);
-        pos.endSale();
+        pos.addItemToSale("A101", 3, da);
+        pos.addItemToSale("C222", 5, da);
+        pos.endSale(rc);
+        
+        //sale #2
+        pos.startNewSale("100", da);
+        pos.addItemToSale("B205", 1, da);
+        pos.addItemToSale("A101", 7, da);
+        pos.endSale(rc);
+        
+        //sale #3
+        pos.startNewSale("200", da);
+        pos.addItemToSale("B205", 2, da);
+        pos.addItemToSale("C222", 1, da);
+        pos.endSale(rc);
     }
     
 }

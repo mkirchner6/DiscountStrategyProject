@@ -5,22 +5,28 @@
  */
 package discountstrategyproject;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author mattkirchner
  */
 public class Receipt {
-
     private LineItem[] lineItems = new LineItem[0];
     private Customer cust;
 
     public Receipt(String custID, ReceiptDataAccessStrategy da) {
         cust = da.findCustomer(custID);
     }
+    
+    public Receipt(ReceiptDataAccessStrategy da) {
+        
+    }
 
     public final void addItemToReceipt(String prodID, int qty, ReceiptDataAccessStrategy da) {
         LineItem lineItem = new LineItem(prodID, qty, da);
         addToArray(lineItem);
+        displayToVideoTerminal();
     }
 
     private final void addToArray(final LineItem item) {
@@ -30,9 +36,17 @@ public class Receipt {
         tempItems[lineItems.length] = item;
         lineItems = tempItems;
     }
+    
+    public final void displayToVideoTerminal() {
+        for(LineItem item: lineItems){
+            JOptionPane.showMessageDialog(null, item);
+        }
+    }
 
-    public final void displayReceipt() {
-
+    public final void displayReceipt(ReceiptFormatter rc) {
+        for(LineItem item: lineItems){
+            rc.displayReceipt(item);
+        }
     }
 
 }
