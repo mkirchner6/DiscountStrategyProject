@@ -15,9 +15,9 @@ public class StartUp {
         POSTerminal pos = new POSTerminal();
         //data access
         ReceiptDataAccessStrategy da = new InMemoryDataAccess();
-        //format receipt
+        //format for receipt
         ReceiptFormatter rc = new ReceiptFormatToConsol();
-        //format video display terminal
+        //format for video display terminal
         FormatDisplayTerminal fdt = new FormatDisplayTerminalToGUI();
         
         //sale #1
