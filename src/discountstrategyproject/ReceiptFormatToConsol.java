@@ -12,8 +12,19 @@ package discountstrategyproject;
 public class ReceiptFormatToConsol implements ReceiptFormatter{
 
     @Override
-    public final void displayReceipt(LineItem item) {
-        System.out.println(item.getProdName() + "   " + item.getUnitPrice() + "   " + item.getQty() + "   " + item.getSubtotal() + "   " + item.getDiscountAmt());
+    public final void displayReceipt(LineItem[] items) {
+        double total = 0;
+        double discTotal = 0;
+        
+        for(LineItem item: items){
+            total += item.getSubtotal() - item.getDiscountAmt();
+            discTotal += item.getDiscountAmt();
+            
+            System.out.println(item.getProdName() + "   " + item.getUnitPrice() + "   " + item.getQty() + "   " + item.getSubtotal() + "   " + item.getDiscountAmt());
+        }
+        System.out.println("Total:  " + total);
+        System.out.println("Total saved:  " + discTotal);
     }
+    
     
 }

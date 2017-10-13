@@ -41,15 +41,13 @@ public class Receipt {
         String data = "";
         for(LineItem item: lineItems){
             data += item.getProdName() + "   " + item.getUnitPrice() + "   " + item.getQty() + "   " + item.getSubtotal() + "   " + item.getDiscountAmt() + "\n";
-        }  
-        JOptionPane.showMessageDialog(null, data);
+        }
+        fdt.displayVideoTerminal(data);
     }
 
     public final void displayReceipt(ReceiptFormatter rc) {
-        this.receiptStoreInfo();
-        for(LineItem item: lineItems){
-            rc.displayReceipt(item);
-        }
+        receiptStoreInfo();
+        rc.displayReceipt(lineItems);
     }
     
     private final void receiptStoreInfo() {

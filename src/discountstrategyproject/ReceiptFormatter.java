@@ -10,5 +10,5 @@ package discountstrategyproject;
  * @author mattkirchner
  */
 public interface ReceiptFormatter {
-    public abstract void displayReceipt(LineItem lineItem);
+    public abstract void displayReceipt(LineItem[] items);
 }
