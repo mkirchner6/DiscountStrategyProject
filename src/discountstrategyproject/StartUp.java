@@ -22,7 +22,7 @@ public class StartUp {
         
         //sale #1
         System.out.println("Customer #1");
-        pos.startNewSale("200", da);
+        pos.startNewSale("100", da);
         pos.addItemToSale("A101", 3, da, fdt);
         pos.addItemToSale("C222", 5, da, fdt);
         pos.endSale(rc);
@@ -42,7 +42,6 @@ public class StartUp {
         pos.addItemToSale("B205", 2, da, fdt);
         pos.addItemToSale("C222", 1, da, fdt);
         pos.endSale(rc);
-        System.out.println("");
     }
     
 }

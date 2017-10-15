@@ -22,7 +22,7 @@ public class ReceiptFormatToGUI implements ReceiptFormatter{
             total += item.getSubtotal() - item.getDiscountAmt();
             discTotal += item.getDiscountAmt();
             
-            JOptionPane.showMessageDialog(null, item.getProdName() + "   " + item.getUnitPrice() + "   " + item.getQty() + "   " + item.getSubtotal() + "   " + item.getDiscountAmt());
+            JOptionPane.showMessageDialog(null, item.getProdName() + "   " + Math.floor(item.getUnitPrice() * 100) / 100 + "   " + Math.floor(item.getQty() * 100) / 100 + "   " + Math.floor(item.getSubtotal() * 100) / 100 + "   " + Math.floor(item.getDiscountAmt() * 100) / 100);
         }
         JOptionPane.showMessageDialog(null,"Total:  " + total);
         JOptionPane.showMessageDialog(null,"Total saved:  " + discTotal);

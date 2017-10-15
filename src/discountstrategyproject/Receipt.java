@@ -40,7 +40,7 @@ public class Receipt {
     private final void displayToVideoTerminal(FormatDisplayTerminal fdt) {
         String data = "";
         for(LineItem item: lineItems){
-            data += item.getProdName() + "   " + item.getUnitPrice() + "   " + item.getQty() + "   " + item.getSubtotal() + "   " + item.getDiscountAmt() + "\n";
+            data += item.getProdName() + "   " + Math.floor(item.getUnitPrice() * 100) / 100 + "   " + Math.floor(item.getQty() * 100) / 100 + "   " + Math.floor(item.getSubtotal() * 100) / 100 + "   " + Math.floor(item.getDiscountAmt() * 100) / 100 + "\n";
         }
         fdt.displayVideoTerminal(data);
     }
