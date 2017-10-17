@@ -40,7 +40,7 @@ public class Receipt {
     private final void displayToVideoTerminal(FormatDisplayTerminal fdt) {
         String data = "";
         for(LineItem item: lineItems){
-            data += item.getProdName() + "   " + Math.floor(item.getUnitPrice() * 100) / 100 + "   " + Math.floor(item.getQty() * 100) / 100 + "   " + Math.floor(item.getSubtotal() * 100) / 100 + "   " + Math.floor(item.getDiscountAmt() * 100) / 100 + "\n";
+            data += item.getProdName() + "   " + Math.floor(item.getUnitPrice() * 100) / 100 + "   " + item.getQty() + "   " + Math.floor(item.getSubtotal() * 100) / 100 + "   " + Math.floor(item.getDiscountAmt() * 100) / 100 + "\n";
         }
         fdt.displayVideoTerminal(data);
     }
@@ -53,6 +53,8 @@ public class Receipt {
     private final void receiptStoreInfo() {
         System.out.println("Thank you for shopping at Kohl's");
         System.out.println(new Date());
+        System.out.println("");
+        System.out.println("Thank you " + cust.getName() + " for shopping at Kohl's");
         System.out.println("");
     }
 

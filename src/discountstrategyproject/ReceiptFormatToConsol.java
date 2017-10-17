@@ -20,7 +20,7 @@ public class ReceiptFormatToConsol implements ReceiptFormatter{
             total += item.getSubtotal() - item.getDiscountAmt();
             discTotal += item.getDiscountAmt();
             
-            System.out.println(item.getProdName() + "   " + Math.floor(item.getUnitPrice() * 100) / 100 + "   " + Math.floor(item.getQty() * 100) / 100 + "   " + Math.floor(item.getSubtotal() * 100) / 100 + "   " + Math.floor(item.getDiscountAmt() * 100) / 100);
+            System.out.println(item.getProdName() + "   " + Math.floor(item.getUnitPrice() * 100) / 100 + "   " + item.getQty() + "   " + Math.floor(item.getSubtotal() * 100) / 100 + "   " + Math.floor(item.getDiscountAmt() * 100) / 100);
         }
         System.out.println("Total:  " + total);
         System.out.println("Total saved:  " + discTotal);
