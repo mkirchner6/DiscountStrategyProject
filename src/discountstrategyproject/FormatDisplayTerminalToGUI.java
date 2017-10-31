@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class FormatDisplayTerminalToGUI implements FormatDisplayTerminal{
 
     @Override
-    public void displayVideoTerminal(String msg) {
+    public final void displayVideoTerminal(String msg) {
         JOptionPane.showMessageDialog(null, msg);
     }
     

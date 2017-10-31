@@ -26,7 +26,7 @@ public class Product {
         return name;
     }
 
-    public final void setProdName(String name) {
+    public final void setProdName(String name) throws IllegalArgumentException{
         if(name == null){
             throw new IllegalArgumentException("This feild is required");
         }
@@ -37,7 +37,7 @@ public class Product {
         return prodID;
     }
 
-    public final void setProdID(String prodID) {
+    public final void setProdID(String prodID) throws IllegalArgumentException{
         if(prodID == null){
             throw new IllegalArgumentException("This feild is required");
         }
@@ -48,7 +48,7 @@ public class Product {
         return unitPrice;
     }
 
-    public final void setUnitPrice(double unitPrice) {
+    public final void setUnitPrice(double unitPrice) throws IllegalArgumentException{
         if(unitPrice == 0){
             throw new IllegalArgumentException("This feild is required");
         }
@@ -59,7 +59,7 @@ public class Product {
         return discount;
     }
 
-    public final void setDiscount(Discount discount) {
+    public final void setDiscount(Discount discount) throws IllegalArgumentException{
         if(discount == null){
             throw new IllegalArgumentException("This feild is required");
         }
