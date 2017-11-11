@@ -5,6 +5,7 @@
  */
 package discountstrategyproject;
 
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,7 +15,7 @@ import javax.swing.JOptionPane;
 public class ReceiptFormatToGUI implements ReceiptFormatter{
 
     @Override
-    public final void displayReceipt(LineItem[] items) {
+    public final void displayReceipt(List<LineItem> items) {
         double total = 0;
         double discTotal = 0;
         

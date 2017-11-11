@@ -5,10 +5,12 @@
  */
 package discountstrategyproject;
 
+import java.util.List;
+
 /**
  *
  * @author mattkirchner
  */
 public interface ReceiptFormatter {
-    public abstract void displayReceipt(LineItem[] items);
+    public abstract void displayReceipt(List<LineItem> items);
 }

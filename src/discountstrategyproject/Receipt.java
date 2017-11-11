@@ -5,7 +5,7 @@
  */
 package discountstrategyproject;
 
-import java.util.Date;
+import java.util.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author mattkirchner
  */
 public class Receipt {
-    private LineItem[] lineItems = new LineItem[0];
+    List<LineItem> lineItems = new ArrayList<>();
     private Customer cust;
 
     public Receipt(String custID, ReceiptDataAccessStrategy da) {
@@ -31,10 +31,7 @@ public class Receipt {
 
     private final void addToArray(final LineItem item) {
         // needs validation
-        LineItem[] tempItems = new LineItem[lineItems.length + 1];
-        System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
-        tempItems[lineItems.length] = item;
-        lineItems = tempItems;
+        lineItems.add(item);
     }
     
     private final void displayToVideoTerminal(FormatDisplayTerminal fdt) {

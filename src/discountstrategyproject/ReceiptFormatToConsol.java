@@ -5,6 +5,7 @@
  */
 package discountstrategyproject;
 import java.lang.Math;
+import java.util.List;
 /**
  *
  * @author mattkirchner
@@ -12,7 +13,7 @@ import java.lang.Math;
 public class ReceiptFormatToConsol implements ReceiptFormatter{
 
     @Override
-    public final void displayReceipt(LineItem[] items) {
+    public final void displayReceipt(List<LineItem> items) {
         double total = 0;
         double discTotal = 0;
         
